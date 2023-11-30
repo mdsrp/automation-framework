@@ -17,7 +17,7 @@ public class Login_Steps {
 
     private WebDriver driver;
 
-    @Before
+    @Before("@login-feature")
     public void setup(){
         System.setProperty("webdriver.chrome.driver", "C:/Workspace/automation-framework/src/main/java/drivers/chromedriver.exe");
         ChromeOptions chromeOptions = new ChromeOptions();
@@ -26,7 +26,7 @@ public class Login_Steps {
         driver.manage().window().maximize();
     }
 
-    @After
+    @After("@login-feature")
     public void tearDown(){
         driver.quit();
     }
