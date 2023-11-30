@@ -39,10 +39,16 @@ public class Login_Steps {
     public void i_enter_the_username(String username) {
         driver.findElement(By.xpath("//input[@id='text']")).sendKeys(username);
     }
-    @And("I enter the password {}")
+    @When("I enter the password {}")
     public void i_enter_the_password(String password) {
         driver.findElement(By.xpath("//input[@id='password']")).sendKeys(password);
     }
+
+    @And("I click on the login button")
+    public void iClickOnTheLoginButton() {
+        driver.findElement(By.xpath("//button[@id='login-button']")).click();
+    }
+
     @Then("I should be presented with a successful login message")
     public void i_should_be_presented_with_a_successful_login_message() {
         String alertText = driver.switchTo().alert().getText();
@@ -53,10 +59,5 @@ public class Login_Steps {
     public void i_should_be_presented_with_a_unsuccessful_login_message() {
         String alertText = driver.switchTo().alert().getText();
         Assert.assertEquals(alertText,"validation failed");
-    }
-
-    @And("I click on the login button")
-    public void iClickOnTheLoginButton() {
-        driver.findElement(By.xpath("//button[@id='login-button']")).click();
     }
 }
