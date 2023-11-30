@@ -8,7 +8,7 @@
       And I click on the login button
       Then I should be presented with a successful login message
 
-    Scenario:
+    Scenario: Validate Unsuccessful Login
       Given I access the webdriver university login page
       When I enter the username johndoe
       And I enter the password password

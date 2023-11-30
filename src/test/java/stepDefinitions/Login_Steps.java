@@ -39,7 +39,7 @@ public class Login_Steps {
     public void i_enter_the_username(String username) {
         driver.findElement(By.xpath("//input[@id='text']")).sendKeys(username);
     }
-    @And("I enter the password {word}")
+    @And("I enter the password {}")
     public void i_enter_the_password(String password) {
         driver.findElement(By.xpath("//input[@id='password']")).sendKeys(password);
     }
